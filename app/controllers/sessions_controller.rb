@@ -13,7 +13,8 @@ class SessionsController < ApplicationController
       redirect_to '/'
     else
     # If user's login doesn't work, send them back to the login form.
-      redirect_to '/users/new'
+    flash[:error] = 'Error Occured'
+    redirect_to '/users/new'
     end
   end
 
