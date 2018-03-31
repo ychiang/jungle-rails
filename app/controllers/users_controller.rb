@@ -9,9 +9,11 @@ class UsersController < ApplicationController
   def create
     @users = User.new(user_params)
     if @users.save
-      # session [:user_id] = user.id
+      session[:user_id] = user.id
       redirect_to '/'
     else
+      session[:user_id] = nil
+      flash[:error] = 'Error Occured'
       render 'users/new'
     end
   end
