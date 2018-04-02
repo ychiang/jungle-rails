@@ -41,7 +41,8 @@
         <% else if current_user %>
         
           <li class="welcome">
-          <%= 'Welcome to Jungle!' %>
+          <%= 'Hi, ' %>
+          <%= current_user.email %>
           </li>
           <li class="user">
           <%= link_to 'Logout', session_path(current_user.id), method: :delete %>  

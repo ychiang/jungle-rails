@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>YOUR ORDER COMFIRMATION:</h3>
+    <p>Thank you for shopping at Jungle!</p> 
+    <br>
+    <p>ORDER SUMMARY: </p>
+     <div class="panel panel-default items">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Quantity</th>
+          <th>Total Price</th>
+        </tr>
+      </thead>
+      <tb>
+        <% @order_total = 0 %>
+        <% @order.line_items.each do |line_item| %>
+        <% @line_item = line_item %>
+        <%= render "orders/order" %>
+        <% end %>
+      </tb>
+      <tf>
+        <tr>
+          <th colspan="2">
+            TOTAL:
+          </th>
+          <th>
+            <%= @order_total %>
+          </th>
+        </tr>
+      </tf>
+    </table>
+  </div>
+    <p>Enjoy your purchase!</p>
+  </body>
+</html>
