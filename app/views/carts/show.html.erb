@@ -4,6 +4,17 @@
     <h1>My Cart</h1>
   </header>
 
+  <%# Empty Cart Page %>
+  <% if cart.size == 0 %>
+  <section class="empty-page">
+  <div class="empty-cart">
+  <%= "😿 I'm Empty!" %>
+  </div>
+  <div class="link-to-home">
+  <%= link_to 'Click Here to go back to Jungle!', [:root] %>
+  </div>
+  </section>
+  <% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -49,5 +60,6 @@
       <% end %>
     </div>
   </div>
+  <% end %>
 
 </section>
