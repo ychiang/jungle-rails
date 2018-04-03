@@ -134,3 +134,29 @@ cat3.products.create!({
 
 
 puts "DONE!"
+
+puts "Re-creating reviews ..."
+
+Review.destroy_all
+
+Review.create!({
+  product_id: 11,  
+  user_id: 1,
+  description: "I got electricuted! Totally what I wanted as a chair!",
+  rating: 5
+})
+
+puts "DONE!"
+
+puts "Adding Users ..."
+
+User.destroy_all
+
+User.create!({
+  firstname: "Bob",
+  lastname: "the Duck",
+  email: "bob@bobtheduck.com",
+  password: "123"
+})
+
+puts "DONE!"
